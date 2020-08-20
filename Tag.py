@@ -2,10 +2,13 @@ from bs4 import BeautifulSoup
 from openpyxl import Workbook
 import xlrd
 import csv
+import os
+
 
 import requests
 scr2 = "google_tag.script"
 match_url = "https://www.googletagmanager.com/gtm.js"
+print(os.path.dirname(os.path.abspath(__file__)))
 
 # rb = xlrd.open_workbook("Galderma GTM.xlsx")
 # sheet = rb.sheet_by_index(0)
