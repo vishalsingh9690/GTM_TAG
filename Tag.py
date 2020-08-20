@@ -65,6 +65,16 @@ for csv_row in mapped_url_data:
 						"error" : e.message
 					})
 	out_writer.writerow(out_data)
-	print(csv_row)
+
+mapped_url_csv.close()
+new_url_csv.close()
+
+new_url_csv = open("output.csv", "r")
+new_url_csv_data = csv.DictReader(new_url_csv)
+for csv_row in new_url_csv_data:
+	if csv_row["status"] in ["Error", "Unmatched"]:
+		assert False
+		break
+
 
 
